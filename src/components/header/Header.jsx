@@ -3,8 +3,6 @@ import React from "react";
 import { createMedia } from "@artsy/fresnel";
 import { Container, Icon, Image, Menu, Sidebar } from "semantic-ui-react";
 
-
-
  const AppMedia = createMedia({
     breakpoints: {
     mobile: 320,
@@ -40,7 +38,7 @@ const NavBarMobile = (props) => {
       <Sidebar.Pusher
         dimmed={visible}
         onClick={onPusherClick}
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "15vh" }}
       >
         <Menu fixed="top" inverted>
           <Menu.Item>

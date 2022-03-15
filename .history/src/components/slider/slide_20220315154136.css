@@ -1,0 +1,10 @@
+@s {
+    background-color: #999;
+    width: 200px;
+    height: 180px;
+    display: inline-block;
+    overflow: hidden;
+}
+a.image_container img {
+    width: 100%;
+}

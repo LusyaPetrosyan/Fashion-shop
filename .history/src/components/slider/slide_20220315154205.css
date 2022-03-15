@@ -1,0 +1,9 @@
+@slide {
+    width: 200px;
+    height: 180px;
+    display: inline-block;
+    overflow: hidden;
+}
+# {
+    width: 100%;
+}
