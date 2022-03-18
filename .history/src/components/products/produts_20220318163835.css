@@ -1,0 +1,9 @@
+const Products = () => {
+    return (
+        <Label>
+            hello
+        </Label>
+    );
+}
+
+export default Products;
