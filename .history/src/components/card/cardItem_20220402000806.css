@@ -1,0 +1,8 @@
+
+.ui.card>.image>img,
+.ui.cards>.card>.image>img {
+    width: 100px;
+    background:none;
+}
+
+/* avelacrac */
