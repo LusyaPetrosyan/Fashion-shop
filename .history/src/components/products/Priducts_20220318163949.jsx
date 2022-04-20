@@ -1,7 +1,0 @@
-
-
-function Products() {
-    return (
-        <d
-    )
-}
