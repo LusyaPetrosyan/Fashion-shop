@@ -3,11 +3,12 @@ import { createMedia } from "@artsy/fresnel";
 import { Icon, Image, Menu, Sidebar, Dropdown } from "semantic-ui-react";
 import { Link, Outlet } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import "./Header.css";
+import "./header.css";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { isUserExists, authoriseUser } from "../../services/api";
 import logo from "../../img/logo.jpg";
+
 const AppMedia = createMedia({
   breakpoints: {
     mobile: 320,
@@ -73,7 +74,6 @@ const NavBarDesktop = (props) => {
   return (
     <Menu fixed="top" inverted>
       <Menu.Item key={nanoid()}>
-        {/* <Image size="mini" src="https://react.semantic-ui.com/logo.png" /> */}
         <Image as={Link} to="/" size="mini" src={logo} className="logoIcon" />
       </Menu.Item>
 
@@ -95,42 +95,6 @@ const NavBarDesktop = (props) => {
   );
 };
 
-// class NavBar extends React.Component {
-//   state = {
-//     visible: false,
-//   };
-
-//   handlePusher = () => {
-//     const { visible } = this.state;
-
-//     if (visible) this.setState({ visible: false });
-//   };
-
-//   handleToggle = () => this.setState({ visible: !this.state.visible });
-
-//   render() {
-//     const { leftItems, rightItems } = this.props;
-//     const { visible } = this.state;
-
-//     return (
-//       <div className="customHeader">
-//         <Media at="mobile">
-//           <NavBarMobile
-//             leftItems={leftItems}
-//             onPusherClick={this.handlePusher}
-//             onToggle={this.handleToggle}
-//             rightItems={rightItems}
-//             visible={visible}
-//           ></NavBarMobile>
-//         </Media>
-
-//         <Media greaterThan="mobile">
-//           <NavBarDesktop leftItems={leftItems} rightItems={rightItems} />
-//         </Media>
-//       </div>
-//     );
-//   }
-// }
 function NavBar({ leftItems, rightItems }) {
   const [visible, setVisible] = useState(false);
 
@@ -160,7 +124,6 @@ function NavBar({ leftItems, rightItems }) {
 const leftItems = [
   { as: Link, to: "/", content: "Home", key: "home" },
   { as: Link, to: "/products", content: "Products", key: "products" },
-  // { as: Link, to: "/review", content: "Review", key: "review" },
 ];
 
 const rightItems = [{ as: Link, to: "/login", content: "Login", key: "login" }];
@@ -174,7 +137,7 @@ function Header() {
     isLoading,
     getAccessTokenSilently,
   } = useAuth0();
-  console.log("user", user);
+
   rightItems.length = 0;
   if (isAuthenticated) {
     rightItems.push({
@@ -213,7 +176,7 @@ function Header() {
       ) {
         let authorised;
         const isExist = await isUserExists(user.sub);
-        console.log("isExists", isExist);
+   
         if (!isExist || (isExist.httpStatus === "OK" && !isExist.info.exists)) {
           const token = await getAccessTokenSilently();
           authorised = await authoriseUser(user, token);

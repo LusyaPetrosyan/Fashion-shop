@@ -23,19 +23,18 @@ function Dashboard() {
   const [orderList, setOrderList] = useState([]);
   const [adminData, setAdminData] = useState({});
   const [responseInfo, setResponseInfo] = useState("");
-console.log("user", user);
+
   async function orderShow() {
     try {
       const token = await getAccessTokenSilently();
       let data = null;
-      // console.log("user",user);
+ 
       if (user && user[`${domainName}roles`].includes(ADMIN)) {
         const dataResult = await Promise.all([
           getProducts(),
           getAllOrders(user.sub, token, UNPAID),
         ]);
-        console.log("dataResult", dataResult);
-        // auth0|625dcf89359d0b006f4e8d8c
+  
         if (dataResult && dataResult[1] && dataResult[1].status === 401) {
           const authorised = await authoriseUser(user, token);
         } else {
@@ -44,18 +43,18 @@ console.log("user", user);
             allProducts: dataResult[0],
             pendingProducts: dataResult[1],
           }));
-          console.log("adminData", adminData);
+          
         }
       } else {
         data = await getOrders(user.sub, token);
-        console.log("user as a user ",user);
-        console.log("data",data);
+        // console.log("user as a user ",user);
+        // console.log("data",data);
         if (data && Array.isArray(data)) {
           if (data.length !== 0) setOrderList(data);
         } else if (data && data.status === 401) {
           const authorised = await authoriseUser(user, token);
         } else {
-          console.log("paka");
+          console.log("sxal");
         }
       }
     } catch (error) {
@@ -78,7 +77,7 @@ console.log("user", user);
         status
       );
       orderShow();//I put this function call
-      console.log("changeResult", changeResult);
+      // console.log("changeResult", changeResult);
     } catch (error) {
       console.log("sxal es arel");
     }
@@ -88,7 +87,6 @@ console.log("user", user);
     try {
       const token = await getAccessTokenSilently();
       const responseImg = await imgUpdate(productId, file, token, user.sub);
-      console.log(responseImg);
 
       if (responseImg.httpStatus && responseImg.httpStatus === "OK") {
         setResponseInfo(responseImg.message);
@@ -121,6 +119,7 @@ console.log("user", user);
             pendingProducts={pendingProducts}
             allProducts={allProducts}
             changeStatus={changeStatus}
+            setResponseInfo={setResponseInfo} 
           />
         </>
       ) : (
