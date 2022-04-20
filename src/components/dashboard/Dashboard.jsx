@@ -9,16 +9,16 @@ import {
 } from "../../services/api";
 import { useAuth0 } from "@auth0/auth0-react";
 import { domainName } from "../../config";
-import { Table, Icon, Message } from "semantic-ui-react";
+import { Message } from "semantic-ui-react";
 import { useEffect, useState } from "react";
 import AddProduct from "../products/AddProduct";
 import Tabs from "../tabs/Tabs";
 import { ADMIN, UNPAID } from "../../services/constants";
-import DataTable from "../dataTable/DataTable";
 import DataTableForUsser from "../dataTable/DataTableForUsser"; 
+import "./dashboard.css";
 
 function Dashboard() {
-  const { error, isAuthenticated, isLoading, user, getAccessTokenSilently } =
+  const { user, getAccessTokenSilently } =
     useAuth0();
   const [orderList, setOrderList] = useState([]);
   const [adminData, setAdminData] = useState({});
@@ -47,8 +47,7 @@ function Dashboard() {
         }
       } else {
         data = await getOrders(user.sub, token);
-        // console.log("user as a user ",user);
-        // console.log("data",data);
+      
         if (data && Array.isArray(data)) {
           if (data.length !== 0) setOrderList(data);
         } else if (data && data.status === 401) {
@@ -76,8 +75,7 @@ function Dashboard() {
         order_id,
         status
       );
-      orderShow();//I put this function call
-      // console.log("changeResult", changeResult);
+      orderShow();
     } catch (error) {
       console.log("sxal es arel");
     }

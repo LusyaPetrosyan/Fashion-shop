@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { useForm } from "react-hook-form";
 import {
   Form,
   Input,
-  TextArea,
-  Button,
-  Select,
   Radio,
 } from "semantic-ui-react";
 
@@ -17,22 +13,14 @@ const options = [
 ];
 
 const FormFieldError = ({ userName, changeOptions }) => {
-  // const [inpChange,setInpChange] = useState("");
-  // useEffect(()=>{
-      // const id = setTimeout(()=>{
-        // changeOptions(inpChange);
-      // },1700);
-      // return ()=>clearTimeout(id)
-  // },[inpChange])
   function handleChange(event) {
-    // const id = setTimeout(() => {
+    
     changeOptions({ [event.target.name]: event.target.value });
-    // },1200);
-    // return ()=>clearTimeout(id);
+  
   }
   return (
     <Form>
-      {/* <Form.Group widths='equal'> */}
+   
       <Form.Field
         id="form-input-control-full-name"
         control={Input}
@@ -49,10 +37,6 @@ const FormFieldError = ({ userName, changeOptions }) => {
         name="address"
         onChange={(e) => {
           handleChange(e)
-          // const idSetAdress =setTimeout(()=>{
-            // handleChange(e);
-          // },1200) ;
-          // return ()=>clearTimeout(idSetAdress)
         }}
       />
       <Form.Field
@@ -64,16 +48,12 @@ const FormFieldError = ({ userName, changeOptions }) => {
         type = "number"
         onChange={(e) => {
           handleChange(e)
-          // const idSetPhone =setTimeout(()=>{
-            // handleChange(e);
-          // },1200) ;
-          // return ()=>clearTimeout(idSetPhone)
         }}
       />
 
       <Form.Field>
         <Radio
-          label="Pay Buy Cash"
+          label="Pay By Cash"
           name="paymentMethod"
           value="cash"
           checked={true}
@@ -83,9 +63,8 @@ const FormFieldError = ({ userName, changeOptions }) => {
         />
       </Form.Field>
       <Form.Field>
-        <Radio label="Pay Buy Card" name="card" value="card" readOnly />
+        <Radio label="Pay By Card" name="card" value="card" readOnly />
       </Form.Field>
-      {/* </Form.Group> */}
     </Form>
   );
 };

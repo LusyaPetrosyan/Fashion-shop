@@ -1,4 +1,4 @@
-import { Container, Grid, Header, List, Segment } from "semantic-ui-react";
+import { Container, Grid, Header, Icon, Segment } from "semantic-ui-react";
 import "./footer.css";
 
 function Footer() {
@@ -9,31 +9,24 @@ function Footer() {
           <Grid divided inverted stackable>
             <Grid.Row>
               <Grid.Column width={3}>
-                <Header inverted as="h4" content="About" />
-                <List link inverted>
-                  <List.Item as="a">Sitemap</List.Item>
-                  <List.Item as="a">Contact Us</List.Item>
-                  <List.Item as="a">Religious Ceremonies</List.Item>
-                  <List.Item as="a">Gazebo Plans</List.Item>
-                </List>
+                <Header inverted as="h4" content="Home" />
+                
               </Grid.Column>
               <Grid.Column width={3}>
-                <Header inverted as="h4" content="Services" />
-                <List link inverted>
-                  <List.Item as="a">Banana Pre-Order</List.Item>
-                  <List.Item as="a">DNA FAQ</List.Item>
-                  <List.Item as="a">How To Access</List.Item>
-                  <List.Item as="a">Favorite X-Men</List.Item>
-                </List>
+                <Header inverted as="h4" content="Products" />
               </Grid.Column>
-              <Grid.Column width={7}>
+
+              <Grid.Column width={3}>
                 <Header as="h4" inverted>
-                  Footer Header
+                 <Icon name='facebook' />
+                 <Icon name='instagram' />
+                 <Icon name='twitter square' />
                 </Header>
-                <p>
-                  Extra space for a call to action inside the footer that could
-                  help re-engage users.
-                </p>
+              </Grid.Column>
+
+              <Grid.Column width={3}>
+              <Icon name='phone square'/>
+              +374 93 322 902
               </Grid.Column>
             </Grid.Row>
           </Grid>

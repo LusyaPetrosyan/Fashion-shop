@@ -2,11 +2,12 @@
 	position: relative;
 	display: flex;
 	min-height: 150px;
-	height: 300px;
+	height: 500px;
 	background-size: cover;
 	overflow: hidden;
     width: 100%;
 	flex-direction: row;
+	margin-bottom: 50px;
 }
 
 img {
@@ -18,23 +19,11 @@ img {
 }
 
 .slideImg{
-	width: 70%;
+	width: 100%;
 	position: relative;
-	/* z-index: -1; */
 }
 
 .slideImg img{
-	position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-}
-
-.slideDescription{
-	width: 30%;
-}
-
-.slideDescription p{
 	position: relative;
     top: 50%;
     transform: translateY(-50%);

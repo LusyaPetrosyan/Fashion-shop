@@ -12,9 +12,6 @@ function CardItem({ description, image, name, price, item }) {
         <Image src={image?image.imagePath: productImg} wrapped ui={false} />
       <Card.Content>
         <Card.Header>{name}</Card.Header>
-        {/* <Card.Meta>
-          <span className="date">Joined in 2015</span>
-        </Card.Meta> */}
         <Card.Description>{description} </Card.Description>
       </Card.Content>
 

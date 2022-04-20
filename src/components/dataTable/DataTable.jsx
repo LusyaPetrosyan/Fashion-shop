@@ -61,13 +61,16 @@ function DataTable({ list, uploadImg }) {
                         item.img[item.img.length - 1]?.imagePath || productImg
                       }
                     />
+                    </Segment.Inline>
+                    </Grid.Column>
 
+                    <Grid.Column width={5}>
                     <Segment.Inline>{item.name}</Segment.Inline>
                     <Segment.Inline>
                       {item.price}
                       <span className="currency">{item.currency}</span>
                     </Segment.Inline>
-                  </Segment.Inline>
+                  
                 </Grid.Column>
                 <Grid.Column width="4" className="image-upload-form">
                   <Segment.Inline >
@@ -98,9 +101,7 @@ function DataTable({ list, uploadImg }) {
                               name="upload"
                             />
                           </Button>
-                        {/* </Segment.Inline> */}
                       </form>
-                    {/* </List.Content> */}
                   </Segment.Inline>
                 </Grid.Column>
               </Grid.Row>

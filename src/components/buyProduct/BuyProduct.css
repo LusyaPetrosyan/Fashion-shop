@@ -1,4 +1,13 @@
 .custom-modal .ui.form{
-    width: 50%;
-    
+    width: 50%; 
+}
+
+.ui.modal>.image.content {
+    display: flex;
+    gap:20px;
+}
+
+.ui.modal>.content>.icon+.description, .ui.modal>.content>.image+.description {
+    flex-grow: 1;
+    min-width: 150px;
 }

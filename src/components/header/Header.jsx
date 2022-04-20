@@ -7,7 +7,7 @@ import "./header.css";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { isUserExists, authoriseUser } from "../../services/api";
-import logo from "../../img/logo.jpg";
+import logo from "../../img/logo.png";
 
 const AppMedia = createMedia({
   breakpoints: {

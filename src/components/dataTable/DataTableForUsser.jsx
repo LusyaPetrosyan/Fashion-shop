@@ -1,12 +1,19 @@
 import productImg from "../../img/img1.jpg";
 import "./dataTable.css";
 import { nanoid } from "nanoid";
-import { Grid, Segment, List, Image, Pagination, Dropdown, Item } from "semantic-ui-react";
+import {
+  Grid,
+  Segment,
+  List,
+  Image,
+  Pagination,
+  Dropdown,
+  Item,
+} from "semantic-ui-react";
 import "./dataTable.css";
 import { useState, useEffect } from "react";
 
 function DataTableForUsser({ list }) {
-
   const [productsByPage, setProductsByPage] = useState([]);
   const [imgFile, setImgFile] = useState();
   const [start, setStart] = useState(0);
@@ -26,12 +33,11 @@ function DataTableForUsser({ list }) {
     setProductsByPage(list.slice(start, start + pageDevider));
   }, [start, result]);
 
-  useEffect(()=>{
-    if(list && list.length>0)setResult(list);
-  },[list])
+  useEffect(() => {
+    if (list && list.length > 0) setResult(list);
+  }, [list]);
 
   function goToPage(e, data) {
-    
     setStart(data.activePage * pageDevider - pageDevider);
   }
   return (
@@ -57,14 +63,19 @@ function DataTableForUsser({ list }) {
                     />
                   </Segment.Inline>
                 </Grid.Column>
-                <Grid.Column width="9">
+                <Grid.Column width="3">
                   <Segment.Inline>
                     <List.Content>
                       <List.Header>{item.product.name} </List.Header>
                       {item.product.price}
                       {item.product.currency}
-                      <Segment.Inline>{item.orderStatus}</Segment.Inline>
                     </List.Content>
+                  </Segment.Inline>
+                </Grid.Column>
+
+                <Grid.Column width="5">
+                  <Segment.Inline>
+                    <Segment.Inline>{item.orderStatus}</Segment.Inline>
                   </Segment.Inline>
                 </Grid.Column>
               </Grid.Row>

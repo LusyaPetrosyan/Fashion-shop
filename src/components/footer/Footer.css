@@ -1,5 +1,5 @@
 .ui.inverted.vertical.segment{
-    background-color: #111316;
+    background-color: #4e95db;
     
 }
 
@@ -11,4 +11,10 @@
  .column{
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.footer{
+    position: absolute;
+    bottom:-35em;
+    width: 100%;
 }

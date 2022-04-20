@@ -70,11 +70,18 @@ input[type=file] {
 
 .currency{
     font-size: 10px;
-    /* opacity: 0.5; */
 }
 
 .nine.wide.column.image-upload-form{
     width: 100%;
     display: flex;
     align-items: center;
+}
+
+.ui.grid>.row{
+    align-items: center;
+}
+
+.ui.grid>.row>.column>.header{
+    padding: 10px;
 }

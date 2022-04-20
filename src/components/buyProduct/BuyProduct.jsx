@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Button, Header, Image, Modal, Segment } from "semantic-ui-react";
 import BuyForm from "./BuyForm";
-import "./BuyProduct.css";
+import "./buyProduct.css";
 import { confirmOrder } from "../../services/api";
 import { useAuth0 } from "@auth0/auth0-react";
+import img6 from "../../img/img6.jpg";
 
 function BuyProduct({ productInfo, item }) {
-  const { error, isAuthenticated, isLoading, user, getAccessTokenSilently } =
+  const { user, getAccessTokenSilently } =
     useAuth0();
 
   const { description, image, name, price } = productInfo;
@@ -72,11 +73,7 @@ function BuyProduct({ productInfo, item }) {
       <Modal.Content image>
         <Image
           size="medium"
-          src={
-            image ||
-            "https://react.semantic-ui.com/images/avatar/large/rachel.png"
-          }
-          wrapped
+          src= {image?image.imagePath: img6} 
         />
 
         <Modal.Description>
