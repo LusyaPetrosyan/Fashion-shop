@@ -36,7 +36,6 @@ function Slides() {
           </Button>
         </div>
         <div className="slideDescription">
-          {/* <p data-testid="text">{slideData[index].text}</p> */}
         </div>
       </div>
     </div>

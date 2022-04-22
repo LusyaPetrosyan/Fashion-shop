@@ -1,6 +1,5 @@
 import {
   getOrders,
-  getOrderByStatus,
   authoriseUser,
   getProducts,
   getAllOrders,
@@ -92,8 +91,6 @@ function Dashboard() {
     } catch (error) {
       console.log("something went wrong", error);
     }
-
-    console.log("file", file);
   }
 
   function handleDismiss() {

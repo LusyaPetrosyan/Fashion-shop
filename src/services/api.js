@@ -166,8 +166,6 @@ export async function imgUpdate(productId, file, token, userId) {
     const response = await fetch(`${apiURL}image/add/${productId}`, {
       method: "POST",
       headers: {
-        // Authorization: `Bearer ${token}`,
-        // "Content-Type": "multipart/form-data",
         userId: userId,
       },
       body: formData,

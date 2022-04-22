@@ -1,4 +1,4 @@
-import { Card, Icon, Image, Button } from "semantic-ui-react";
+import { Card, Image, Button } from "semantic-ui-react";
 import "./cardItem.css";
 import BuyProduct from "../buyProduct/BuyProduct";
 import { useAuth0 } from "@auth0/auth0-react";

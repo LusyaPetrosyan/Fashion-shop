@@ -1,7 +1,7 @@
 import React from "react";
 import { createMedia } from "@artsy/fresnel";
 import { Icon, Image, Menu, Sidebar, Dropdown } from "semantic-ui-react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./header.css";
 import { nanoid } from "nanoid";
@@ -176,17 +176,14 @@ function Header() {
       ) {
         let authorised;
         const isExist = await isUserExists(user.sub);
-   
-        if (!isExist || (isExist.httpStatus === "OK" && !isExist.info.exists)) {
+        console.log("isExist", isExist)
+        if (!isExist || (isExist.httpStatus === "OK" && isExist.info.exists === "false")) {
           const token = await getAccessTokenSilently();
           authorised = await authoriseUser(user, token);
         }
-        if (
-          (authorised && authorised.httpStatus === "OK") ||
-          isExist.info.exists
-        ) {
+        if(authorised || (isExist.httpStatus === 'OK' && isExist.info.exists === "true")){
           localStorage.setItem("autoriseUser", user.nickname);
-        }
+          }
       }
     })();
   }, [isAuthenticated]);
