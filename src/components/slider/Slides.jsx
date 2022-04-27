@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import slidesData from "../../services/slideData";
 import "./slide.css";
 import { Button, Icon } from "semantic-ui-react";
+// import slideshow from "../../services/slideshow";
 
 function Slides() {
   const [slideData, setSlideData] = useState(slidesData());
   const [index, setIndex] = useState(0);
+
   function handleNext() {
     index !== slideData.length - 1 ? setIndex(index + 1) : setIndex(0);
   }
@@ -14,9 +16,14 @@ function Slides() {
     index !== 0 ? setIndex(index - 1) : setIndex(slideData.length - 1);
   }
 
+  useEffect(() => {
+    const slideId = setInterval(handleNext, 3500);
+    return () => clearInterval(slideId);
+  }, [index]);
+
   return (
     <div>
-      <div id="slide" className="card text-center">
+      <div id="slide">
         <div className="slideImg">
           <img src={slideData[index].image} />
           <Button
@@ -34,8 +41,6 @@ function Slides() {
           >
             <Icon name="chevron right" />
           </Button>
-        </div>
-        <div className="slideDescription">
         </div>
       </div>
     </div>

@@ -50,6 +50,11 @@ function DataTable({ list, uploadImg }) {
           return (
             <Grid className="grid-table" key={nanoid()}>
               <Grid.Row>
+                <Grid.Column width="1">
+                  <Segment.Inline>
+                    {item.id}
+                  </Segment.Inline>
+                </Grid.Column>
                 <Grid.Column width="5">
                   <Segment.Inline>
                     <Image
@@ -62,7 +67,7 @@ function DataTable({ list, uploadImg }) {
                   </Segment.Inline>
                 </Grid.Column>
 
-                <Grid.Column width={5}>
+                <Grid.Column width="6">
                   <Segment.Inline>{item.name}</Segment.Inline>
                   <Segment.Inline>
                     {item.price}

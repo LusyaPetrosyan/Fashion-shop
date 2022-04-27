@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import { Pagination } from "semantic-ui-react";
 
-import { Grid, Segment, List, Image, Dropdown, Item } from "semantic-ui-react";
+import { Dropdown, Item } from "semantic-ui-react";
 import productImg from "../../img/img1.jpg";
 import "./dataTable.css";
 
@@ -33,18 +33,18 @@ function PendingTable({ list, changeStatus }) {
           console.log("item", item);
           return (
           
-            <Item.Group key={nanoid()}>
-              <Item>
-                <Item.Image
+            <Item.Group className="itemGroup" key={nanoid()}>
+              <Item className="rowContainer">
+                <Item.Image className="percent-15"
                   size="tiny"
                   src={item.product.img[0]?.imagePath || productImg}
                 />
-                <Item.Content>{item.orderStatus}</Item.Content>
-                <Item.Content>
+                <Item.Content className="percent-15">{item.orderStatus}</Item.Content>
+                <Item.Content className="percent-50">
                   <Item.Header as="a"> {item.product.name}</Item.Header>
                   <Item.Extra>{item.product.description.comment} </Item.Extra>
                 </Item.Content>
-                <Item.Content>
+                <Item.Content className="percent-20">
                   <Item.Header as="a">
                     <Dropdown pointing="top left" text="Edit Status">
                       <Dropdown.Menu>

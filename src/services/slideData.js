@@ -15,14 +15,14 @@ function slidesData(){
             text: "Squats are important. Remember to keep your back straight.",
           },
           
-          {
-            image: images.img4,
-            text: "Slightly bend your knees. Remember about full range of motion.",
-          },
-          {
-            image: images.img5,
-            text: "You made it, have a nice day and see you next time!",
-          },
+          // {
+          //   image: images.img4,
+          //   text: "Slightly bend your knees. Remember about full range of motion.",
+          // },
+          // {
+          //   image: images.img5,
+          //   text: "You made it, have a nice day and see you next time!",
+          // },
     ];
     return SLIDES;
 }

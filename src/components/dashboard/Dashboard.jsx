@@ -107,16 +107,16 @@ function Dashboard() {
       {user &&
       user[`${domainName}roles`] &&
       user[`${domainName}roles`].includes(ADMIN) ? (
-        <>
+        <div className="description">
           <AddProduct setResponseInfo={setResponseInfo} />
-          <Tabs
+          <Tabs 
             uploadImg={uploadImg}
             pendingProducts={pendingProducts}
             allProducts={allProducts}
             changeStatus={changeStatus}
             setResponseInfo={setResponseInfo} 
           />
-        </>
+        </div>
       ) : (
         <DataTableForUsser list={orderList} />
       )}

@@ -5,31 +5,37 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import productImg from "../../img/img1.jpg";
 
-function CardItem({ description, image, name, price, item }) {
+function CardItem({ description, image, name, price, item, currency, setResponseInfo, imageList, stock, section }) {
   const { isAuthenticated, user } = useAuth0();
+
   return (
-    <Card centered>
-        <Image src={image?image.imagePath: productImg} wrapped ui={false} />
-      <Card.Content>
+    <Card id="card">
+      <Image id="imageContainer" src={image ? image.imagePath : productImg} wrapped ui={false} />
+      <Card.Content id="cardContent">
         <Card.Header>{name}</Card.Header>
-        <Card.Description>{description} </Card.Description>
+        <Card.Description>
+          <h5>{description} </h5>
+          </Card.Description>
       </Card.Content>
 
       <Card.Content extra className="buy-info">
         {price}
+        {currency}
         {isAuthenticated ? (
           <BuyProduct
             item={item}
-            productInfo={{ description, image, name, price }}
+            productInfo={{ description, image, name, price, stock }}
+            setResponseInfo={setResponseInfo}
+                        imageList = {imageList}
+                        stock={stock}
           />
         ) : (
-          <Button as={Link} to="/login" color="green" inverted floated="right">
+          <Button as={Link} to="/login" inverted floated="right">
             BUY
           </Button>
-        )} 
-        
+        )}
       </Card.Content>
     </Card>
   );
 }
- export default CardItem;
+export default CardItem;

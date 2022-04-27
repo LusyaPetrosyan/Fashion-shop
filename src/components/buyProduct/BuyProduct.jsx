@@ -73,7 +73,10 @@ function BuyProduct({ productInfo, item }) {
       <Modal.Content image>
         <Image
           size="medium"
-          src= {image?image.imagePath: img6} 
+          src={
+            image.imagePath ||
+            "https://react.semantic-ui.com/images/avatar/large/rachel.png"
+          } 
         />
 
         <Modal.Description>

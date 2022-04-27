@@ -18,7 +18,7 @@ const Tabs = ({ pendingProducts, allProducts, changeStatus, uploadImg }) => {
     {
       menuItem: "Pending",
       render: () => (
-        <Tab.Pane>
+        <Tab.Pane className="pendingProduct">
           <PendingTable 
             list={pendingProducts} 
             changeStatus={changeStatus} 

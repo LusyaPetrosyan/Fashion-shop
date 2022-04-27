@@ -1,7 +1,11 @@
 .dashboard{
 margin-top: 80px;
-border: 2px solid #4e95db;
+border: 2px solid #f4b5ee;
 padding: 20px;
 border-radius: 20px;
+}
+
+.dashboard .desciption .content{
+    
 }
 

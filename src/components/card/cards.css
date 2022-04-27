@@ -1,4 +1,4 @@
-.ui.cards>.card{
+ .ui.cards>.card{
     display: flex;
     background-color:white;
     justify-content: center;
@@ -7,17 +7,18 @@
 .ui.card {
     margin: 0;
     align-items: center;
-
 }
 
 .productItems.ui.grid {
-    margin: 2vh;
+    margin: 40px;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
   }
 
 .ui.card>.image,
  .ui.cards>.card>.image {
-    width: 100px;
+    width: 200px;
     background:none;
 }
 
@@ -26,4 +27,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 
+
