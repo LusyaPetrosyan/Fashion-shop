@@ -1,15 +1,7 @@
 import productImg from "../../img/img1.jpg";
 import "./dataTable.css";
 import { nanoid } from "nanoid";
-import {
-  Grid,
-  Segment,
-  List,
-  Image,
-  Pagination,
-  Dropdown,
-  Item,
-} from "semantic-ui-react";
+import { Grid, Segment, List, Image, Pagination } from "semantic-ui-react";
 import "./dataTable.css";
 import { useState, useEffect } from "react";
 
@@ -25,6 +17,7 @@ function DataTableForUsser({ list }) {
     console.log(e.target.files);
     setImgFile(e.target.files[0]);
   }
+
   useEffect(() => {
     console.log(imgFile);
   }, [imgFile]);
@@ -40,6 +33,7 @@ function DataTableForUsser({ list }) {
   function goToPage(e, data) {
     setStart(data.activePage * pageDevider - pageDevider);
   }
+
   return (
     <>
       {productsByPage &&

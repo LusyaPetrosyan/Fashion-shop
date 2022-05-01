@@ -86,7 +86,7 @@ export async function authoriseUser(user, token) {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json;charset=utf-8",
-        userId: user,
+        userId: id,
       },
       body: JSON.stringify({
         id,
@@ -155,7 +155,6 @@ export async function imgUpdate(productId, file, token, userId) {
   formData.append(
     "image",
     file
-    // { type: "multipart/form-data" }
   );
 
   for (var key of formData.entries()) {
@@ -189,6 +188,21 @@ export async function imgUpdate(productId, file, token, userId) {
       return response.json();
     } catch (error) {
       console.log("sxalPost", error);
+    }
+  }
+
+  export async function getOrdersByUserId(user_id, token) {
+    try {
+      const response = await fetch(`${apiURL}order/user-order`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          user_id: user_id,
+        },
+      });
+      return await response.json();
+    } catch (error) {
+      console.log("wrong", error);
     }
   }
 

@@ -13,12 +13,11 @@ import { useEffect, useState } from "react";
 import AddProduct from "../products/AddProduct";
 import Tabs from "../tabs/Tabs";
 import { ADMIN, UNPAID } from "../../services/constants";
-import DataTableForUsser from "../dataTable/DataTableForUsser"; 
+import DataTableForUsser from "../dataTable/DataTableForUsser";
 import "./dashboard.css";
 
 function Dashboard() {
-  const { user, getAccessTokenSilently } =
-    useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
   const [orderList, setOrderList] = useState([]);
   const [adminData, setAdminData] = useState({});
   const [responseInfo, setResponseInfo] = useState("");
@@ -27,13 +26,13 @@ function Dashboard() {
     try {
       const token = await getAccessTokenSilently();
       let data = null;
- 
+
       if (user && user[`${domainName}roles`].includes(ADMIN)) {
         const dataResult = await Promise.all([
           getProducts(),
           getAllOrders(user.sub, token, UNPAID),
         ]);
-  
+
         if (dataResult && dataResult[1] && dataResult[1].status === 401) {
           const authorised = await authoriseUser(user, token);
         } else {
@@ -42,11 +41,10 @@ function Dashboard() {
             allProducts: dataResult[0],
             pendingProducts: dataResult[1],
           }));
-          
         }
       } else {
         data = await getOrders(user.sub, token);
-      
+
         if (data && Array.isArray(data)) {
           if (data.length !== 0) setOrderList(data);
         } else if (data && data.status === 401) {
@@ -109,12 +107,12 @@ function Dashboard() {
       user[`${domainName}roles`].includes(ADMIN) ? (
         <div className="description">
           <AddProduct setResponseInfo={setResponseInfo} />
-          <Tabs 
+          <Tabs
             uploadImg={uploadImg}
             pendingProducts={pendingProducts}
             allProducts={allProducts}
             changeStatus={changeStatus}
-            setResponseInfo={setResponseInfo} 
+            setResponseInfo={setResponseInfo}
           />
         </div>
       ) : (

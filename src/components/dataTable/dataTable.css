@@ -1,108 +1,89 @@
-.ui.image.product-icon{
+.ui.image.product-icon {
     width: auto;
     height: 90px;
-     
-    }
+}
 
 .grid-table {
     position: relative;
 }
 
-.grid-table>.row{
+.grid-table>.row {
     height: 120px;
 }
-#name-prudct{
+
+#name-prudct {
     font-size: 18px;
     font-weight: 500;
-    
+
 }
 
-#price-id{
+#price-id {
     font-size: 16px;
     font-weight: 500;
 }
 
-#status-id{
+#status-id {
     font-weight: 500;
 }
 
-#address-id{
+#address-id {
     font-size: 12px;
     font-weight: 300;
 }
-#address{
- font-size: 17px;
- font-weight: 500;
+
+#address {
+    font-size: 17px;
+    font-weight: 500;
 }
 
-.phone-pending{
+.phone-pending {
     font-size: 10px;
 }
 
-.pending-item{
+.pending-item {
     border-bottom: 1px solid #999999;
 }
 
-.item{
+.item {
     justify-content: space-between;
 }
 
-.ui.button.btn-upload{
+.ui.button.btn-upload {
     background: none;
-    
+
 }
-.green.upload.icon.btn-icon{
+
+.green.upload.icon.btn-icon {
     font-size: 14px;
 }
 
 input[type=file] {
     display: none;
-    
+
 }
 
-.img-icon{
+.img-icon {
     cursor: pointer;
 }
 
-.ui.grid.grid-table{
+.ui.grid.grid-table {
     margin-bottom: 20px;
 }
 
-.currency{
+.currency {
     font-size: 10px;
 }
 
-.nine.wide.column.image-upload-form{
+.nine.wide.column.image-upload-form {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.ui.grid>.row{
+.ui.grid>.row {
     align-items: center;
 }
 
-.ui.grid>.row>.column>.header{
+.ui.grid>.row>.column>.header {
     padding: 10px;
 }
-
-.itemGroup .percent-15{
-width: 20%;
-}
-
-.itemGroup .percent-50{
-    width: 45%;
-}
-
-.itemGroup .percent-20{
-    width: 25%;
-}
-
-.ui.items.itemGroup .content{
-    padding: 5px;
-}
-
-.rowContainer{
-    display: flex;
-}
-

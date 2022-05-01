@@ -15,6 +15,7 @@ function AddProductForm({ changeOptions }) {
           placeholder="name"
           onChange={(e) => handleChange(e)}
         />
+
         <Form.Field
           name="productPrice"
           control={Input}
@@ -23,6 +24,7 @@ function AddProductForm({ changeOptions }) {
           placeholder="0.0"
           onChange={(e) => handleChange(e)}
         />
+
         <Form.Field
           name="productDescription"
           control={TextArea}
@@ -30,6 +32,7 @@ function AddProductForm({ changeOptions }) {
           placeholder="description"
           onChange={(e) => handleChange(e)}
         />
+
         <Form.Field
           name="productCount"
           control={Input}

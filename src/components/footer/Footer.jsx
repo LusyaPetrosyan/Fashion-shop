@@ -18,6 +18,7 @@ function Footer() {
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="About us" />
               </Grid.Column>
+
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="Help" />
               </Grid.Column>

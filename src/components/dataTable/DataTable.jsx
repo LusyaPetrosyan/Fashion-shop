@@ -22,7 +22,6 @@ function DataTable({ list, uploadImg }) {
 
   function onChange(e, id) {
     selectidId.current = id;
-
     setImgFile(e.target.files[0]);
   }
 
@@ -30,8 +29,7 @@ function DataTable({ list, uploadImg }) {
     if (list && list.length > 0) setResult(list);
   }, [list]);
 
-  useEffect(() => {
-  }, [imgFile]);
+  useEffect(() => {}, [imgFile]);
 
   useEffect(() => {
     selectidId.current = null;
@@ -51,10 +49,9 @@ function DataTable({ list, uploadImg }) {
             <Grid className="grid-table" key={nanoid()}>
               <Grid.Row>
                 <Grid.Column width="1">
-                  <Segment.Inline>
-                    {item.id}
-                  </Segment.Inline>
+                  <Segment.Inline>{item.id}</Segment.Inline>
                 </Grid.Column>
+
                 <Grid.Column width="5">
                   <Segment.Inline>
                     <Image
@@ -74,6 +71,7 @@ function DataTable({ list, uploadImg }) {
                     <span className="currency">{item.currency}</span>
                   </Segment.Inline>
                 </Grid.Column>
+
                 <Grid.Column width="4" className="image-upload-form">
                   <Segment.Inline>
                     <form

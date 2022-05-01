@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import slidesData from "../../services/slideData";
 import "./slide.css";
 import { Button, Icon } from "semantic-ui-react";
-// import slideshow from "../../services/slideshow";
 
 function Slides() {
   const [slideData, setSlideData] = useState(slidesData());
@@ -17,7 +16,7 @@ function Slides() {
   }
 
   useEffect(() => {
-    const slideId = setInterval(handleNext, 3500);
+    const slideId = setInterval(handleNext, 3000);
     return () => clearInterval(slideId);
   }, [index]);
 

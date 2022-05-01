@@ -18,6 +18,7 @@ const AppMedia = createMedia({
     widescreen: 1920,
   },
 });
+
 const { Media, MediaContextProvider } = AppMedia;
 
 const NavBarMobile = (props) => {
@@ -26,9 +27,9 @@ const NavBarMobile = (props) => {
 
   return (
     <Sidebar.Pushable>
-    <Sidebar.Pusher id="left-pusher" dimmed={visible} onClick={onPusherClick}>
+      <Sidebar.Pusher id="left-pusher" dimmed={visible} onClick={onPusherClick}>
         <Sidebar
-        key={nanoid()}
+          key={nanoid()}
           as={Menu}
           animation="overlay"
           icon="labeled"
@@ -37,14 +38,20 @@ const NavBarMobile = (props) => {
           vertical
           visible={visible}
         />
-    </Sidebar.Pusher>
+      </Sidebar.Pusher>
 
-    <Sidebar.Pusher
-    >
+      <Sidebar.Pusher>
         <Menu fixed="top" inverted>
           <Menu.Item key={nanoid()}>
-            <Image size="mini" src="https://react.semantic-ui.com/logo.png" />
+            <Image
+              as={Link}
+              to="/"
+              size="mini"
+              src={logo}
+              className="logoIcon"
+            />
           </Menu.Item>
+
           <Menu.Item onClick={onToggle} key={nanoid()}>
             <Icon name="sidebar" />
           </Menu.Item>
@@ -129,14 +136,7 @@ const leftItems = [
 const rightItems = [{ as: Link, to: "/login", content: "Login", key: "login" }];
 
 function Header() {
-  const {
-    user,
-    isAuthenticated,
-    logout,
-    error,
-    isLoading,
-    getAccessTokenSilently,
-  } = useAuth0();
+  const { user, isAuthenticated, logout, getAccessTokenSilently } = useAuth0();
 
   rightItems.length = 0;
   if (isAuthenticated) {
@@ -176,14 +176,20 @@ function Header() {
       ) {
         let authorised;
         const isExist = await isUserExists(user.sub);
-        console.log("isExist", isExist)
-        if (!isExist || (isExist.httpStatus === "OK" && isExist.info.exists === "false")) {
+        console.log("isExist", isExist);
+        if (
+          !isExist ||
+          (isExist.httpStatus === "OK" && isExist.info.exists === "false")
+        ) {
           const token = await getAccessTokenSilently();
           authorised = await authoriseUser(user, token);
         }
-        if(authorised || (isExist.httpStatus === 'OK' && isExist.info.exists === "true")){
+        if (
+          authorised ||
+          (isExist.httpStatus === "OK" && isExist.info.exists === "true")
+        ) {
           localStorage.setItem("autoriseUser", user.nickname);
-          }
+        }
       }
     })();
   }, [isAuthenticated]);

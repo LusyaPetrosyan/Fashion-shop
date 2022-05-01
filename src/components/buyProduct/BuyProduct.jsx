@@ -4,11 +4,9 @@ import BuyForm from "./BuyForm";
 import "./buyProduct.css";
 import { confirmOrder } from "../../services/api";
 import { useAuth0 } from "@auth0/auth0-react";
-import img6 from "../../img/img6.jpg";
-
-function BuyProduct({ productInfo, item }) {
-  const { user, getAccessTokenSilently } =
-    useAuth0();
+import { getOrdersByUserId } from "../../services/api";
+function BuyProduct({ productInfo, item, setResponseInfo, stock }) {
+  const { user, getAccessTokenSilently } = useAuth0();
 
   const { description, image, name, price } = productInfo;
   const [open, setOpen] = useState(false);
@@ -26,6 +24,13 @@ function BuyProduct({ productInfo, item }) {
         picture: user.picture,
       };
       const orderStatus = await confirmOrder(userObj, item, token, options);
+      const getOrderName = await getOrdersByUserId(userObj.id, token);
+
+      const prodName = getOrderName.filter(
+        (item) => item.id == orderStatus.info.OrderId
+      );
+
+      setResponseInfo(`You buy the product ${prodName[0].product.name}`);
       console.log(orderStatus);
     } catch (error) {
       console.log(error);
@@ -36,7 +41,7 @@ function BuyProduct({ productInfo, item }) {
     if (open === false) {
       resetOptions();
     }
-    console.log("disable", disable);
+
     let status = false;
     for (let key in options) {
       if (!options[key] && key !== "paymentMethod") {
@@ -76,7 +81,7 @@ function BuyProduct({ productInfo, item }) {
           src={
             image.imagePath ||
             "https://react.semantic-ui.com/images/avatar/large/rachel.png"
-          } 
+          }
         />
 
         <Modal.Description>
@@ -86,6 +91,7 @@ function BuyProduct({ productInfo, item }) {
         </Modal.Description>
         <BuyForm userName={user.name} changeOptions={changeOptions} />
       </Modal.Content>
+
       <Modal.Actions>
         <Segment>
           <Segment.Inline>
@@ -99,7 +105,6 @@ function BuyProduct({ productInfo, item }) {
               icon="checkmark"
               onClick={() => {
                 setOpen(false);
-
                 confirmAction();
               }}
               positive

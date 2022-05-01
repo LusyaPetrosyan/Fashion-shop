@@ -1,10 +1,5 @@
 import React from "react";
-
-import {
-  Form,
-  Input,
-  Radio,
-} from "semantic-ui-react";
+import { Form, Input, Radio } from "semantic-ui-react";
 
 const options = [
   { key: "m", text: "Male", value: "male" },
@@ -14,13 +9,10 @@ const options = [
 
 const FormFieldError = ({ userName, changeOptions }) => {
   function handleChange(event) {
-    
     changeOptions({ [event.target.name]: event.target.value });
-  
   }
   return (
     <Form>
-   
       <Form.Field
         id="form-input-control-full-name"
         control={Input}
@@ -29,6 +21,7 @@ const FormFieldError = ({ userName, changeOptions }) => {
         value={userName}
         readOnly
       />
+
       <Form.Field
         id="form-input-control-address"
         control={Input}
@@ -36,18 +29,19 @@ const FormFieldError = ({ userName, changeOptions }) => {
         placeholder="Address"
         name="address"
         onChange={(e) => {
-          handleChange(e)
+          handleChange(e);
         }}
       />
+
       <Form.Field
         id="form-input-control-phone-number"
         control={Input}
         label="Phone number"
         placeholder="Phone number"
         name="phone"
-        type = "number"
+        type="number"
         onChange={(e) => {
-          handleChange(e)
+          handleChange(e);
         }}
       />
 
@@ -58,10 +52,11 @@ const FormFieldError = ({ userName, changeOptions }) => {
           value="cash"
           checked={true}
           onChange={(e) => {
-            handleChange(e)
+            handleChange(e);
           }}
         />
       </Form.Field>
+
       <Form.Field>
         <Radio label="Pay By Card" name="card" value="card" readOnly />
       </Form.Field>

@@ -1,97 +1,56 @@
-.ui.card>.image>img,
-.ui.cards>.card>.image>img {
-    width: 100%;
-    height: auto;
-    background:none;
+.ui.card > .image > img,
+.ui.cards > .card > .image > img {
+  width: 100%;
+  height: auto;
+  background: none;
 }
 
-.ui.card>.buy-info{
-    padding: 5px;
-    position: relative;
-    height: 60px;
-    width: 100%;
-    border-radius: 30px;
+.ui.card > .buy-info {
+  padding: 5px;
+  position: relative;
+  height: 60px;
+  width: 100%;
+  border-radius: 30px;
 }
 
-#card{
-    padding: 10px;
-    height: 400px;
-    border:1px solid #d69f51;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#card {
+  padding: 10px;
+  height: 400px;
+  border: 1px solid #d69f51;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#imageContainer{
-    display: flex;
-    justify-content: center;
-    height: 200px;
-    width: 100%;
+#imageContainer {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
 }
 
-#buyButton:hover{
-    background: linear-gradient( #f5e1a3,#c47d20);
-    border:none;
-    color: white;
-
+#buyButton:hover {
+  background: linear-gradient(#f5e1a3, #c47d20);
+  border: none;
+  color: white;
 }
 
-.ui.card>.content>.header:not(.ui){
-    font-weight: 100;
-    color: rgb(90, 152, 142);
+.ui.card > .content > .header:not(.ui) {
+  font-weight: 100;
+  color: rgb(90, 152, 142);
 }
 
-.ui.card>.content>.description{
-    color: rgb(90, 152, 142);
+.ui.card > .content > .description {
+  color: rgb(90, 152, 142);
 }
-.ui.inverted.green.button{
-    background-color: #f0bde8;
-    color: aliceblue;
-    border: 2px solid #f4b5ee;
-    -webkit-box-shadow: 0 0 0 2px #feffff inset!important
-}
-
-.ui.card>.extra{
-    color: rgb(90, 152, 142);
+.ui.inverted.green.button {
+  background-color: #f1d284;
+  color: aliceblue;
+  border: 2px solid #f3e790;
+  -webkit-box-shadow: 0 0 0 2px #feffff inset !important;
 }
 
-
-/* .ui.card>.image, .ui.cards>.card>.image {
-    width: 200px;
-    background: none;
-    margin-top: 10px; 
-   
+.ui.card > .extra {
+  color: rgb(90, 152, 142);
 }
-.ui.button.buyBtn{
-    position: relative;
-    border: none;
-    background: #fbe8ea;
-    border-radius: 15px;
-    color: rgb(220, 243, 13);
-}
-.ui.button.buyBtn:hover{
-    background: #d3c0ba; 
-    color: #fbe8ea;
-    cursor: pointer;
-}
-
-.ui.card>.content{
-    font-style: italic;
-    font-weight: 700;
-    margin: 5px;
-    border-top: 2px solid ;
-}
-
-.ui.centered.card{
-    border-radius: 30px 30px;
-    box-shadow:10px 8px 4px 4px; color:rgba(235, 203, 241, 0.521);
-    background-color: #f6f6f6;
- }
-
-
- .ui.card>.extra{
-     color: #f0bde8;
- } */
-
- 

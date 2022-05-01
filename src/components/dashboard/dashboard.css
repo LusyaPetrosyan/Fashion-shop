@@ -1,11 +1,10 @@
-.dashboard{
-margin-top: 80px;
-border: 2px solid #f4b5ee;
-padding: 20px;
-border-radius: 20px;
+.dashboard {
+  margin-top: 80px;
+  border: 2px solid #f1d284;
+  padding: 20px;
+  border-radius: 20px;
 }
 
-.dashboard .desciption .content{
-    
+.ui.green.button {
+  background-color: #f1d284;
 }
-

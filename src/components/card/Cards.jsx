@@ -38,6 +38,8 @@ const Cards = ({ pageDevider, setResponseInfo }) => {
               description={item?.description.comment || ""}
               image={item.img[item.img.length - 1]}
               name={item.name}
+              currency={item.currency}
+              setResponseInfo={setResponseInfo}
               price={item.price}
             />
           );

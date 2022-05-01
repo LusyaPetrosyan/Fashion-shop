@@ -1,31 +1,29 @@
- .ui.cards>.card{
-    display: flex;
-    background-color:white;
-    justify-content: center;
-
+.ui.cards > .card {
+  display: flex;
+  background-color: white;
+  justify-content: center;
 }
 .ui.card {
-    margin: 0;
-    align-items: center;
+  margin: 0;
+  align-items: center;
 }
 
 .productItems.ui.grid {
-    margin: 40px;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-
-.ui.card>.image,
- .ui.cards>.card>.image {
-    width: 200px;
-    background:none;
+  margin: 40px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.pagination-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
+.ui.card > .image,
+.ui.cards > .card > .image {
+  width: 200px;
+  background: none;
+}
 
+.pagination-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
